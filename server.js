@@ -7,7 +7,7 @@ const logger = require("morgan")
 
 //MONGO DB CONNECTION
 const { MongoClient, ServerApiVersion } = require("mongodb")
-const uri = "mogouri"
+const uri = "mongouri"
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -33,12 +33,12 @@ app.post("/", (req, res) => {
       if (!doc) {
         collection.insertOne({ data }, err => {
           if (err) return console.log(err)
-          res.send("data inserted succesfully")
+          res.send("Succesfully registered")
           client.close()
         })
       } else {
-        console.log("entry already exists")
-        res.send("email already registered")
+        res.send("Unsuccessfully registered . Email already exists")
+        client.close()
       }
     })
   })

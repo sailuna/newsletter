@@ -6,7 +6,7 @@ import { Navbar, Nav, Container } from "react-bootstrap"
 const NavBar = () => {
   let greetingMessage = ""
   if (isLoggedIn()) {
-    greetingMessage = `Hello ${getUser().name}`
+    greetingMessage = `Hello username: ${getUser().name} password: ${getUser().password}`
   } else {
     greetingMessage = "You are not logged in"
   }

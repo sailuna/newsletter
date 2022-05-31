@@ -13,6 +13,7 @@ export const handleLogin = ({ username, password }) => {
     return setUser({
       username: `admin`,
       name: `admin`,
+      password:"admin"
     })
   }
   return false
